@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>Loyihalardan namunalar | Jamshiddin</title>
+  </head>
+
+  <body class="bg-gray-950 text-white font-[Inter] min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-gray-950/70 border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold bg-linear-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent no-underline">
+          Jamshiddin
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="/user_page/" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors no-underline">About me</a>
+          <a href="/#contact" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors no-underline">Contact</a>
+          <a href="/projects/" class="nav-link text-sm font-medium text-white transition-colors no-underline">My projects</a>
+        </nav>
+        <a href="/projects/" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-medium transition-all no-underline">
+          <i class="fa-solid fa-arrow-left text-xs"></i> Orqaga
+        </a>
+      </div>
+    </header>
+
+    <main class="pt-28 pb-20">
+      <div class="max-w-5xl mx-auto px-6">
+        <!-- Page Header -->
+        <div class="text-center mb-12 fade-in">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+            <i class="fa-solid fa-layer-group text-xs"></i>
+            12 ta loyiha
+          </div>
+          <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">
+            Loyihalardan
+            <span class="bg-linear-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">namunalar</span>
+          </h1>
+          <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+            JavaScript, HTML/CSS va API bilan ishlangan amaliy loyihalar to'plami
+          </p>
+        </div>
+
+        <!-- Projects List -->
+        <div class="space-y-4 fade-in-delay">
+
+          <!-- Palindrome Checker -->
+          <a href="http://www.jamshiddin.uz/my_projects/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-white/3 border border-white/5 hover:border-green-500/30 hover:bg-green-500/3 transition-all no-underline">
+            <div class="w-14 h-14 rounded-xl bg-green-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-spell-check text-green-400 text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">Palindrome Checker</h3>
+              <p class="text-sm text-gray-500">So'z yoki gap palindrom ekanligini tekshiruvchi ilova</p>
+            </div>
+            <div class="hidden sm:flex gap-2">
+              <span class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400 text-xs">JS</span>
+              <span class="px-2 py-1 rounded-md bg-orange-500/10 text-orange-400 text-xs">HTML</span>
+            </div>
+            <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-green-400 transition-colors"></i>
+          </a>
+
+          <!-- Roman Numeral Converter -->
+          <a href="http://www.jamshiddin.uz/my_projects/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-white/3 border border-white/5 hover:border-yellow-500/30 hover:bg-yellow-500/3 transition-all no-underline">
+            <div class="w-14 h-14 rounded-xl bg-yellow-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-arrows-rotate text-yellow-400 text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">Roman Numeral Converter</h3>
+              <p class="text-sm text-gray-500">Sonlarni rim raqamlariga va aksincha o'giruvchi dastur</p>
+            </div>
+            <div class="hidden sm:flex gap-2">
+              <span class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400 text-xs">JS</span>
+            </div>
+            <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-yellow-400 transition-colors"></i>
+          </a>
+
+          <!-- Telephone Number Validator -->
+          <a href="http://www.jamshiddin.uz/my_projects/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-white/3 border border-white/5 hover:border-violet-500/30 hover:bg-violet-500/3 transition-all no-underline">
+            <div class="w-14 h-14 rounded-xl bg-violet-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-phone-volume text-violet-400 text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">Telephone Number Validator</h3>
+              <p class="text-sm text-gray-500">Telefon raqamini to'g'ri formatda ekanligini tekshirish</p>
+            </div>
+            <div class="hidden sm:flex gap-2">
+              <span class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400 text-xs">JS</span>
+              <span class="px-2 py-1 rounded-md bg-violet-500/10 text-violet-400 text-xs">RegEx</span>
+            </div>
+            <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-violet-400 transition-colors"></i>
+          </a>
+
+          <!-- Cash Register -->
+          <a href="http://www.jamshiddin.uz/my_projects/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-white/3 border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/3 transition-all no-underline">
+            <div class="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-cash-register text-emerald-400 text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">Cash Register</h3>
+              <p class="text-sm text-gray-500">Kassa apparati — qaytim hisoblash dasturi</p>
+            </div>
+            <div class="hidden sm:flex gap-2">
+              <span class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400 text-xs">JS</span>
+            </div>
+            <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-emerald-400 transition-colors"></i>
+          </a>
+
+          <!-- freeCodeCamp News Author -->
+          <a href="http://www.jamshiddin.uz/my_projects/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-white/3 border border-white/5 hover:border-blue-500/30 hover:bg-blue-500/3 transition-all no-underline">
+            <div class="w-14 h-14 rounded-xl bg-blue-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-newspaper text-blue-400 text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">freeCodeCamp News Author</h3>
+              <p class="text-sm text-gray-500">freeCodeCamp yangiliklar mualliflari sahifasi</p>
+            </div>
+            <div class="hidden sm:flex gap-2">
+              <span class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400 text-xs">JS</span>
+              <span class="px-2 py-1 rounded-md bg-blue-500/10 text-blue-400 text-xs">API</span>
+            </div>
+            <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-blue-400 transition-colors"></i>
+          </a>
+
+          <!-- freeCodeCamp News Author 2 -->
+          <a href="http://www.jamshiddin.uz/my_projects/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-white/3 border border-white/5 hover:border-indigo-500/30 hover:bg-indigo-500/3 transition-all no-underline">
+            <div class="w-14 h-14 rounded-xl bg-indigo-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-newspaper text-indigo-400 text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">freeCodeCamp News Author 2</h3>
+              <p class="text-sm text-gray-500">freeCodeCamp yangiliklar mualliflari — 2-versiya</p>
+            </div>
+            <div class="hidden sm:flex gap-2">
+              <span class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400 text-xs">JS</span>
+              <span class="px-2 py-1 rounded-md bg-indigo-500/10 text-indigo-400 text-xs">API</span>
+            </div>
+            <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-indigo-400 transition-colors"></i>
+          </a>
+
+          <!-- RPG Creature Search App -->
+          <a href="http://www.jamshiddin.uz/my_projects/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-white/3 border border-white/5 hover:border-red-500/30 hover:bg-red-500/3 transition-all no-underline">
+            <div class="w-14 h-14 rounded-xl bg-red-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-dragon text-red-400 text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">RPG Creature Search App</h3>
+              <p class="text-sm text-gray-500">RPG o'yin mavjudotlarini qidirish ilovasi</p>
+            </div>
+            <div class="hidden sm:flex gap-2">
+              <span class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400 text-xs">JS</span>
+              <span class="px-2 py-1 rounded-md bg-red-500/10 text-red-400 text-xs">API</span>
+            </div>
+            <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-red-400 transition-colors"></i>
+          </a>
+
+          <!-- User Registration -->
+          <a href="http://www.jamshiddin.uz/my_projects/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-white/3 border border-white/5 hover:border-teal-500/30 hover:bg-teal-500/3 transition-all no-underline">
+            <div class="w-14 h-14 rounded-xl bg-teal-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-user-plus text-teal-400 text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">User Registration</h3>
+              <p class="text-sm text-gray-500">Foydalanuvchi ro'yxatdan o'tish formasi va validatsiya</p>
+            </div>
+            <div class="hidden sm:flex gap-2">
+              <span class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400 text-xs">JS</span>
+              <span class="px-2 py-1 rounded-md bg-orange-500/10 text-orange-400 text-xs">HTML</span>
+            </div>
+            <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-teal-400 transition-colors"></i>
+          </a>
+
+          <!-- Flags Country -->
+          <a href="http://www.jamshiddin.uz/my_projects/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-white/3 border border-white/5 hover:border-sky-500/30 hover:bg-sky-500/3 transition-all no-underline">
+            <div class="w-14 h-14 rounded-xl bg-sky-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-flag text-sky-400 text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">Flags Country</h3>
+              <p class="text-sm text-gray-500">Davlatlar bayroqlari bilan ishlash ilovasi</p>
+            </div>
+            <div class="hidden sm:flex gap-2">
+              <span class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400 text-xs">JS</span>
+              <span class="px-2 py-1 rounded-md bg-sky-500/10 text-sky-400 text-xs">API</span>
+            </div>
+            <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-sky-400 transition-colors"></i>
+          </a>
+
+          <!-- Fetch Render -->
+          <a href="http://www.jamshiddin.uz/my_projects/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-white/3 border border-white/5 hover:border-orange-500/30 hover:bg-orange-500/3 transition-all no-underline">
+            <div class="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-cloud-arrow-down text-orange-400 text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">Fetch Render</h3>
+              <p class="text-sm text-gray-500">API dan ma'lumot olish va sahifada ko'rsatish</p>
+            </div>
+            <div class="hidden sm:flex gap-2">
+              <span class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400 text-xs">JS</span>
+              <span class="px-2 py-1 rounded-md bg-orange-500/10 text-orange-400 text-xs">Fetch</span>
+            </div>
+            <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-orange-400 transition-colors"></i>
+          </a>
+
+          <!-- Qur'an App -->
+          <a href="http://www.jamshiddin.uz/my_projects/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-white/3 border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/3 transition-all no-underline">
+            <div class="w-14 h-14 rounded-xl bg-emerald-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-book-quran text-emerald-400 text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">Qur'an App</h3>
+              <p class="text-sm text-gray-500">Qur'oni Karim suralarini o'qish ilovasi</p>
+            </div>
+            <div class="hidden sm:flex gap-2">
+              <span class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400 text-xs">JS</span>
+              <span class="px-2 py-1 rounded-md bg-emerald-500/10 text-emerald-400 text-xs">API</span>
+            </div>
+            <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-emerald-400 transition-colors"></i>
+          </a>
+
+          <!-- Tarjimon App -->
+          <a href="http://www.jamshiddin.uz/my_projects/" target="_blank" class="group flex items-center gap-5 p-5 rounded-2xl bg-white/3 border border-white/5 hover:border-purple-500/30 hover:bg-purple-500/3 transition-all no-underline">
+            <div class="w-14 h-14 rounded-xl bg-purple-500/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-language text-purple-400 text-xl"></i>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-bold text-white mb-1">Tarjimon App</h3>
+              <p class="text-sm text-gray-500">Matnlarni turli tillarga tarjima qiluvchi ilova</p>
+            </div>
+            <div class="hidden sm:flex gap-2">
+              <span class="px-2 py-1 rounded-md bg-yellow-500/10 text-yellow-400 text-xs">JS</span>
+              <span class="px-2 py-1 rounded-md bg-purple-500/10 text-purple-400 text-xs">API</span>
+            </div>
+            <i class="fa-solid fa-arrow-right text-gray-600 group-hover:text-purple-400 transition-colors"></i>
+          </a>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5">
+      <div class="max-w-7xl mx-auto px-6 py-8 text-center text-sm text-gray-500">
+        &copy; 2026 Jamshiddin. Barcha huquqlar himoyalangan.
+      </div>
+    </footer>
+
+    <script type="module" src="/projects/samples/main.js"></script>
+  </body>
+</html>

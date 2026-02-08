@@ -25,16 +25,35 @@
         </a>
         <nav class="hidden md:flex items-center gap-8">
           <a href="/user_page/" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">
-            About me
+            <span data-i18n="nav.about">About me</span>
           </a>
           <a href="#contact" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">
-            Contact
+            <span data-i18n="nav.contact">Contact</span>
           </a>
           <a href="/projects/" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">
-            My projects
+            <span data-i18n="nav.projects">My projects</span>
           </a>
         </nav>
         <div class="flex items-center gap-3">
+          <!-- Language Dropdown -->
+          <div class="relative" id="langDropdown">
+            <button id="langBtn" class="flex items-center gap-1.5 px-3 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition-all text-sm text-gray-400">
+              <i class="fa-solid fa-globe text-xs"></i>
+              <span id="langLabel">UZ</span>
+              <i class="fa-solid fa-chevron-down text-[10px]"></i>
+            </button>
+            <div id="langMenu" class="hidden absolute right-0 top-12 w-40 rounded-xl bg-gray-900 border border-white/10 shadow-2xl overflow-hidden z-50">
+              <button data-lang="uz" class="lang-option w-full text-left px-4 py-2.5 text-sm hover:bg-white/5 transition-colors flex items-center gap-3 cursor-pointer">
+                <span>🇺🇿</span> O'zbekcha
+              </button>
+              <button data-lang="ru" class="lang-option w-full text-left px-4 py-2.5 text-sm hover:bg-white/5 transition-colors flex items-center gap-3 cursor-pointer">
+                <span>🇷🇺</span> Русский
+              </button>
+              <button data-lang="en" class="lang-option w-full text-left px-4 py-2.5 text-sm hover:bg-white/5 transition-colors flex items-center gap-3 cursor-pointer">
+                <span>🇬🇧</span> English
+              </button>
+            </div>
+          </div>
           <button id="dark" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition-all">
             <i class="fa-solid fa-moon text-gray-400 text-sm" id="modeIcon"></i>
           </button>
@@ -59,25 +78,25 @@
             <div class="flex-1 text-center lg:text-left space-y-6 fade-in">
               <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium">
                 <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                Available for work
+                <span data-i18n="hero.badge">Available for work</span>
               </div>
               <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight">
-                Salom, men
+                <span data-i18n="hero.greeting">Salom, men</span>
                 <span class="bg-linear-to-r from-blue-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
                   Jamshiddin
                 </span>
               </h1>
               <p class="text-lg text-gray-400 max-w-lg leading-relaxed">
-                Full-stack web developer. Zamonaviy va chiroyli web ilovalar yarataman.
+                <span data-i18n="hero.desc">Full-stack web developer. Zamonaviy va chiroyli web ilovalar yarataman.</span>
               </p>
               <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
                 <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-linear-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 text-sm font-semibold transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5">
                   <i class="fa-solid fa-paper-plane text-xs"></i>
-                  Bog'lanish
+                  <span data-i18n="hero.contact">Bog'lanish</span>
                 </a>
                 <a href="/projects/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-semibold transition-all hover:-translate-y-0.5">
                   <i class="fa-solid fa-code text-xs"></i>
-                  Loyihalarim
+                  <span data-i18n="hero.projects">Loyihalarim</span>
                 </a>
               </div>
             </div>
@@ -141,7 +160,7 @@
       <div class="max-w-7xl mx-auto px-6 py-12">
         <div class="flex flex-col md:flex-row items-center justify-between gap-8">
           <div class="text-center md:text-left">
-            <h3 class="text-xl font-bold mb-2">Bog'lanish</h3>
+            <h3 class="text-xl font-bold mb-2" data-i18n="footer.contact">Bog'lanish</h3>
             <a href="tel:+998957990034" class="text-gray-400 hover:text-white transition-colors text-lg">
               +998 95 799 00 34
             </a>

@@ -11,6 +11,7 @@ export default defineConfig({
         about: resolve(__dirname, "user_page/index.html"),
         login: resolve(__dirname, "login/index.html"),
         projects: resolve(__dirname, "projects/index.html"),
+        samples: resolve(__dirname, "projects/samples/index.html"),
       },
     },
   },

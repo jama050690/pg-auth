@@ -1,4 +1,4 @@
-import "../src/styles.css";
+import "../src/shared.js";
 
 // Toggle password visibility
 const toggleBtn = document.getElementById("togglePassword");
