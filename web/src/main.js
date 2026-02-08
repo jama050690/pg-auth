@@ -1,5 +1,5 @@
-import "./style.css";
+import "./styles.css";
 
-const json = await ( await fetch( "http://localhost:3000" ) ).json()
+const json = await (await fetch("http://localhost:3000")).json();
 
-console.log( json )
+console.log(json);

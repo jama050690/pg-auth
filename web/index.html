@@ -1,18 +1,176 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>web</title>
-    <style>
-      :root {
-        color-scheme: dark only;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Jamshiddin | Portfolio</title>
   </head>
-  <body>
-    <div id="app"></div>
+
+  <body class="bg-gray-950 text-white font-[Inter] min-h-screen">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-gray-950/70 border-b border-white/5">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="text-2xl font-bold bg-linear-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+          Jamshiddin
+        </a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="/user_page/" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">
+            About me
+          </a>
+          <a href="#contact" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">
+            Contact
+          </a>
+          <a href="/projects/" class="nav-link text-sm font-medium text-gray-400 hover:text-white transition-colors">
+            My projects
+          </a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button id="dark" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition-all">
+            <i class="fa-solid fa-moon text-gray-400 text-sm" id="modeIcon"></i>
+          </button>
+          <a href="/login/" class="login-btn flex items-center gap-2 rounded-xl bg-linear-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 px-5 py-2.5 text-sm font-semibold text-white transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 no-underline">
+            Login
+            <i class="fa-solid fa-right-to-bracket text-xs"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="pt-24">
+      <section class="relative overflow-hidden">
+        <!-- Background glow effects -->
+        <div class="absolute top-20 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute top-40 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-6 py-20">
+          <div class="flex flex-col lg:flex-row items-center gap-16">
+            <!-- Text content -->
+            <div class="flex-1 text-center lg:text-left space-y-6 fade-in">
+              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                Available for work
+              </div>
+              <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight">
+                Salom, men
+                <span class="bg-linear-to-r from-blue-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">
+                  Jamshiddin
+                </span>
+              </h1>
+              <p class="text-lg text-gray-400 max-w-lg leading-relaxed">
+                Full-stack web developer. Zamonaviy va chiroyli web ilovalar yarataman.
+              </p>
+              <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-2">
+                <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-linear-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 text-sm font-semibold transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:-translate-y-0.5">
+                  <i class="fa-solid fa-paper-plane text-xs"></i>
+                  Bog'lanish
+                </a>
+                <a href="/projects/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-sm font-semibold transition-all hover:-translate-y-0.5">
+                  <i class="fa-solid fa-code text-xs"></i>
+                  Loyihalarim
+                </a>
+              </div>
+            </div>
+
+            <!-- Photo -->
+            <div class="flex-1 flex justify-center fade-in-delay">
+              <div class="relative group">
+                <div class="absolute -inset-1 bg-linear-to-r from-blue-500 to-violet-500 rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity"></div>
+                <img
+                  class="relative w-100 h-125 object-cover rounded-3xl border border-white/10 shadow-2xl"
+                  src="./public/photo_2025-11-21_19-33-24.jpg"
+                  alt="Jamshiddin"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack -->
+      <section class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
+          <div class="tech-card group p-6 rounded-2xl bg-white/3 border border-white/5 hover:border-orange-500/30 hover:bg-orange-500/5 transition-all text-center">
+            <i class="fa-brands fa-html5 text-3xl text-orange-400 mb-3"></i>
+            <p class="text-sm font-medium text-gray-300">HTML</p>
+          </div>
+          <div class="tech-card group p-6 rounded-2xl bg-white/3 border border-white/5 hover:border-blue-400/30 hover:bg-blue-400/5 transition-all text-center">
+            <i class="fa-brands fa-css3-alt text-3xl text-blue-400 mb-3"></i>
+            <p class="text-sm font-medium text-gray-300">CSS</p>
+          </div>
+          <div class="tech-card group p-6 rounded-2xl bg-white/3 border border-white/5 hover:border-yellow-500/30 hover:bg-yellow-500/5 transition-all text-center">
+            <i class="fa-brands fa-js text-3xl text-yellow-400 mb-3"></i>
+            <p class="text-sm font-medium text-gray-300">JavaScript</p>
+          </div>
+          <div class="tech-card group p-6 rounded-2xl bg-white/3 border border-white/5 hover:border-cyan-400/30 hover:bg-cyan-400/5 transition-all text-center">
+            <i class="fa-solid fa-wind text-3xl text-cyan-400 mb-3"></i>
+            <p class="text-sm font-medium text-gray-300">Tailwind</p>
+          </div>
+          <div class="tech-card group p-6 rounded-2xl bg-white/3 border border-white/5 hover:border-green-500/30 hover:bg-green-500/5 transition-all text-center">
+            <i class="fa-brands fa-node-js text-3xl text-green-400 mb-3"></i>
+            <p class="text-sm font-medium text-gray-300">Node.js</p>
+          </div>
+          <div class="tech-card group p-6 rounded-2xl bg-white/3 border border-white/5 hover:border-gray-400/30 hover:bg-gray-400/5 transition-all text-center">
+            <i class="fa-solid fa-server text-3xl text-gray-300 mb-3"></i>
+            <p class="text-sm font-medium text-gray-300">Express</p>
+          </div>
+          <div class="tech-card group p-6 rounded-2xl bg-white/3 border border-white/5 hover:border-violet-500/30 hover:bg-violet-500/5 transition-all text-center">
+            <i class="fa-solid fa-database text-3xl text-blue-400 mb-3"></i>
+            <p class="text-sm font-medium text-gray-300">PostgreSQL</p>
+          </div>
+          <div class="tech-card group p-6 rounded-2xl bg-white/3 border border-white/5 hover:border-cyan-500/30 hover:bg-cyan-500/5 transition-all text-center">
+            <i class="fa-brands fa-docker text-3xl text-cyan-400 mb-3"></i>
+            <p class="text-sm font-medium text-gray-300">Docker</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="border-t border-white/5 mt-10">
+      <div class="max-w-7xl mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-bold mb-2">Bog'lanish</h3>
+            <a href="tel:+998957990034" class="text-gray-400 hover:text-white transition-colors text-lg">
+              +998 95 799 00 34
+            </a>
+          </div>
+          <div class="flex items-center gap-4">
+            <a href="https://t.me/Jama_9133" target="_blank"
+              class="social-icon w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-500/20 hover:border-blue-500/30 hover:text-blue-400 transition-all">
+              <i class="fa-brands fa-telegram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/jamshiddin-babajonov-168705382/" target="_blank"
+              class="social-icon w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-blue-500/20 hover:border-blue-500/30 hover:text-blue-400 transition-all">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/jama050690" target="_blank"
+              class="social-icon w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/20 hover:border-white/30 transition-all">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://wa.me/998957990034" target="_blank"
+              class="social-icon w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-green-500/20 hover:border-green-500/30 hover:text-green-400 transition-all">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-white/5 text-center text-sm text-gray-500">
+          &copy; 2026 Jamshiddin. Barcha huquqlar himoyalangan.
+        </div>
+      </div>
+    </footer>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

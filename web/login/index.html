@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login | Jamshiddin</title>
+  </head>
+
+  <body class="bg-gray-950 text-white font-[Inter] min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Background effects -->
+    <div class="absolute top-0 left-1/3 w-[500px] h-[500px] bg-blue-500/8 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-violet-500/8 rounded-full blur-3xl"></div>
+
+    <div class="w-full max-w-md mx-auto px-6 fade-in">
+      <!-- Logo -->
+      <div class="text-center mb-10">
+        <a href="/" class="text-3xl font-bold bg-linear-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent no-underline">
+          Jamshiddin
+        </a>
+        <p class="text-gray-500 mt-2 text-sm">Hisobingizga kiring</p>
+      </div>
+
+      <!-- Login Card -->
+      <div class="p-8 rounded-2xl bg-white/3 border border-white/5 backdrop-blur-sm shadow-2xl">
+        <form id="loginForm" class="space-y-5">
+          <!-- Email -->
+          <div class="space-y-2">
+            <label for="email" class="text-sm font-medium text-gray-300">Email</label>
+            <div class="relative">
+              <i class="fa-solid fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="email@example.com"
+                required
+                class="w-full pl-11 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/25 transition-all"
+              />
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="space-y-2">
+            <label for="password" class="text-sm font-medium text-gray-300">Parol</label>
+            <div class="relative">
+              <i class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Parolingizni kiriting"
+                required
+                class="w-full pl-11 pr-12 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/25 transition-all"
+              />
+              <button type="button" id="togglePassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 cursor-pointer transition-colors">
+                <i class="fa-solid fa-eye text-sm"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Remember + Forgot -->
+          <div class="flex items-center justify-between text-sm">
+            <label class="flex items-center gap-2 cursor-pointer text-gray-400">
+              <input type="checkbox" class="w-4 h-4 rounded border-white/10 bg-white/5 accent-blue-500" />
+              Eslab qolish
+            </label>
+            <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors no-underline">Parolni unutdingizmi?</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button
+            type="submit"
+            class="w-full py-3 rounded-xl bg-linear-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 text-sm font-semibold transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 cursor-pointer flex items-center justify-center gap-2"
+          >
+            <i class="fa-solid fa-right-to-bracket text-xs"></i>
+            Kirish
+          </button>
+        </form>
+
+        <!-- Divider -->
+        <div class="flex items-center gap-4 my-6">
+          <div class="flex-1 h-px bg-white/10"></div>
+          <span class="text-xs text-gray-500">yoki</span>
+          <div class="flex-1 h-px bg-white/10"></div>
+        </div>
+
+        <!-- Social login -->
+        <div class="flex gap-3">
+          <button class="flex-1 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition-all flex items-center justify-center gap-2 text-sm text-gray-300">
+            <i class="fa-brands fa-google"></i>
+            Google
+          </button>
+          <button class="flex-1 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 cursor-pointer transition-all flex items-center justify-center gap-2 text-sm text-gray-300">
+            <i class="fa-brands fa-github"></i>
+            GitHub
+          </button>
+        </div>
+      </div>
+
+      <!-- Register link -->
+      <p class="text-center text-sm text-gray-500 mt-6">
+        Hisobingiz yo'qmi?
+        <a href="/register/" class="text-blue-400 hover:text-blue-300 transition-colors no-underline font-medium">Ro'yxatdan o'ting</a>
+      </p>
+
+      <!-- Back link -->
+      <div class="text-center mt-4">
+        <a href="/" class="text-sm text-gray-500 hover:text-gray-300 transition-colors no-underline inline-flex items-center gap-1">
+          <i class="fa-solid fa-arrow-left text-xs"></i>
+          Bosh sahifaga qaytish
+        </a>
+      </div>
+    </div>
+
+    <script type="module" src="/login/main.js"></script>
+  </body>
+</html>
