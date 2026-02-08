@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.9'
 
 services:
   api:
@@ -7,8 +7,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-    environment:
-      - NODE_ENV=production
     networks:
       - app-network
 
@@ -20,6 +18,24 @@ services:
       - "80:80"
     depends_on:
       - api
+    networks:
+      - app-network
+
+  tailwind:
+    image: xprom/tailwind:latest
+    ports:
+      - "3002:8454"   # <-- container ichidagi portni to'g'ri moslashtirdik
+    environment:
+      NODE_ENV: production
+    networks:
+      - app-network
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_PASSWORD: admin123
+    ports:
+      - "5432:5432"
     networks:
       - app-network
 
