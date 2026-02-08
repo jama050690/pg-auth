@@ -95,11 +95,30 @@
             <label for="password" class="text-sm font-medium text-gray-300" data-i18n="register.password">Parol</label>
             <div class="relative">
               <i class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
-              <input type="password" id="password" name="password" placeholder="Kamida 6 ta belgi" required minlength="6"
+              <input type="password" id="password" name="password" placeholder="Kamida 8 ta belgi" required minlength="8"
                 class="w-full pl-11 pr-12 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-violet-500/50 focus:ring-1 focus:ring-violet-500/25 transition-all" />
               <button type="button" id="togglePassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 cursor-pointer transition-colors">
                 <i class="fa-solid fa-eye text-sm"></i>
               </button>
+            </div>
+            <!-- Password rules -->
+            <div id="passwordRules" class="space-y-1 pt-1">
+              <div class="flex items-center gap-2 text-xs" id="ruleLength">
+                <i class="fa-solid fa-circle text-[6px] text-gray-600"></i>
+                <span class="text-gray-500" data-i18n="register.rule8">Kamida 8 ta belgi</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs" id="ruleUpper">
+                <i class="fa-solid fa-circle text-[6px] text-gray-600"></i>
+                <span class="text-gray-500" data-i18n="register.ruleUpper">Kamida 1 ta katta harf (A-Z)</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs" id="ruleNumber">
+                <i class="fa-solid fa-circle text-[6px] text-gray-600"></i>
+                <span class="text-gray-500" data-i18n="register.ruleNumber">Kamida 1 ta raqam (0-9)</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs" id="ruleSpecial">
+                <i class="fa-solid fa-circle text-[6px] text-gray-600"></i>
+                <span class="text-gray-500" data-i18n="register.ruleSpecial">Kamida 1 ta maxsus belgi (_=&^%$#@!)</span>
+              </div>
             </div>
           </div>
 

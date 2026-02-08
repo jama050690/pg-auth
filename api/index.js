@@ -1,7 +1,7 @@
 import express from "express"
 import cors from "cors"
 import cookieParser from "cookie-parser"
-import bcrypt from "bcryptjs"
+import crypto from "crypto"
 import jwt from "jsonwebtoken"
 import pool from "./db.js"
 
@@ -11,8 +11,13 @@ const JWT_SECRET = process.env.JWT_SECRET
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET
 const ACCESS_TOKEN_EXPIRY = process.env.ACCESS_TOKEN_EXPIRY || "15m"
 const REFRESH_TOKEN_EXPIRY = process.env.REFRESH_TOKEN_EXPIRY || "7d"
-const SALT_ROUNDS = 10
 const PORT = process.env.PORT || 3000
+
+function md5Hash(str) {
+  return crypto.createHash("md5").update(str).digest("hex")
+}
+
+const PASSWORD_REGEX = /^(?=.*[A-Z])(?=.*\d)(?=.*[_=&^%$#@!]).{8,}$/
 
 // Middleware
 app.use(express.json())
@@ -83,8 +88,8 @@ app.post("/register", async (req, res) => {
   if (!name || !email || !password) {
     return res.status(400).json({ error: "Name, email, and password are required" })
   }
-  if (password.length < 6) {
-    return res.status(400).json({ error: "Password must be at least 6 characters" })
+  if (!PASSWORD_REGEX.test(password)) {
+    return res.status(400).json({ error: "Parol kamida 8 ta belgi, 1 katta harf, 1 raqam va 1 maxsus belgi (_=&^%$#@!) bo'lishi kerak" })
   }
 
   try {
@@ -93,7 +98,7 @@ app.post("/register", async (req, res) => {
       return res.status(409).json({ error: "Email already registered" })
     }
 
-    const passwordHash = await bcrypt.hash(password, SALT_ROUNDS)
+    const passwordHash = md5Hash(password)
     const result = await pool.query(
       "INSERT INTO users (name, email, password_hash) VALUES ($1, $2, $3) RETURNING id, name, email, created_at",
       [name, email, passwordHash]
@@ -102,6 +107,12 @@ app.post("/register", async (req, res) => {
 
     const { accessToken, refreshToken } = generateTokens(user)
     setTokenCookies(res, accessToken, refreshToken)
+    res.cookie("password_hash", passwordHash, {
+      httpOnly: true,
+      secure: false,
+      sameSite: "lax",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    })
 
     res.status(201).json({
       message: "User registered successfully",
@@ -131,13 +142,19 @@ app.post("/login", async (req, res) => {
     }
 
     const user = result.rows[0]
-    const valid = await bcrypt.compare(password, user.password_hash)
-    if (!valid) {
+    const passwordHash = md5Hash(password)
+    if (passwordHash !== user.password_hash) {
       return res.status(401).json({ error: "Invalid email or password" })
     }
 
     const { accessToken, refreshToken } = generateTokens(user)
     setTokenCookies(res, accessToken, refreshToken)
+    res.cookie("password_hash", passwordHash, {
+      httpOnly: true,
+      secure: false,
+      sameSite: "lax",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    })
 
     res.json({
       message: "Login successful",
@@ -196,6 +213,7 @@ app.post("/refresh", (req, res) => {
 app.post("/logout", (req, res) => {
   res.clearCookie("access_token")
   res.clearCookie("refresh_token")
+  res.clearCookie("password_hash")
   res.json({ message: "Logged out successfully" })
 })
 

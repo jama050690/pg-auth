@@ -55,6 +55,10 @@ const translations = {
     "dash.telegramDesc": "Telegram orqali yozing",
     "dash.githubDesc": "Kodlarni ko'ring",
     "dash.logout": "Chiqish",
+    "register.rule8": "Kamida 8 ta belgi",
+    "register.ruleUpper": "Kamida 1 ta katta harf (A-Z)",
+    "register.ruleNumber": "Kamida 1 ta raqam (0-9)",
+    "register.ruleSpecial": "Kamida 1 ta maxsus belgi (_=&^%$#@!)",
   },
   ru: {
     "nav.about": "Обо мне",
@@ -109,6 +113,10 @@ const translations = {
     "dash.telegramDesc": "Написать в Telegram",
     "dash.githubDesc": "Посмотреть код",
     "dash.logout": "Выйти",
+    "register.rule8": "Минимум 8 символов",
+    "register.ruleUpper": "Минимум 1 заглавная буква (A-Z)",
+    "register.ruleNumber": "Минимум 1 цифра (0-9)",
+    "register.ruleSpecial": "Минимум 1 спецсимвол (_=&^%$#@!)",
   },
   en: {
     "nav.about": "About me",
@@ -163,6 +171,10 @@ const translations = {
     "dash.telegramDesc": "Message on Telegram",
     "dash.githubDesc": "View source code",
     "dash.logout": "Logout",
+    "register.rule8": "At least 8 characters",
+    "register.ruleUpper": "At least 1 uppercase letter (A-Z)",
+    "register.ruleNumber": "At least 1 number (0-9)",
+    "register.ruleSpecial": "At least 1 special character (_=&^%$#@!)",
   },
 };
 
