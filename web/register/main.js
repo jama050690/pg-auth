@@ -12,27 +12,34 @@ toggleBtn?.addEventListener("click", () => {
 });
 
 // Form submit
-const form = document.getElementById("loginForm");
+const form = document.getElementById("registerForm");
 form?.addEventListener("submit", async (e) => {
   e.preventDefault();
+  const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
+  const confirmPassword = document.getElementById("confirmPassword").value;
+
+  if (password !== confirmPassword) {
+    alert("Parollar mos kelmadi!");
+    return;
+  }
 
   try {
-    const res = await fetch("http://localhost:3000/login", {
+    const res = await fetch("http://localhost:3000/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ name, email, password }),
     });
     const data = await res.json();
 
     if (res.ok) {
       window.location.href = "/";
     } else {
-      alert(data.error || "Login xatolik");
+      alert(data.error || "Ro'yxatdan o'tishda xatolik");
     }
   } catch (err) {
-    console.error("Login error:", err);
+    console.error("Register error:", err);
   }
 });

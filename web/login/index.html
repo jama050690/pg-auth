@@ -17,9 +17,34 @@
   </head>
 
   <body class="bg-gray-950 text-white font-[Inter] min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Top controls -->
+    <div class="fixed top-4 right-4 z-50 flex items-center gap-2">
+      <div class="relative" id="langDropdown">
+        <button id="langBtn" class="flex items-center gap-1.5 px-3 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition-all text-sm text-gray-400">
+          <i class="fa-solid fa-globe text-xs"></i>
+          <span id="langLabel">UZ</span>
+          <i class="fa-solid fa-chevron-down text-[10px]"></i>
+        </button>
+        <div id="langMenu" class="hidden absolute right-0 top-12 w-40 rounded-xl bg-gray-900 border border-white/10 shadow-2xl overflow-hidden z-50">
+          <button data-lang="uz" class="lang-option w-full text-left px-4 py-2.5 text-sm hover:bg-white/5 transition-colors flex items-center gap-3 cursor-pointer">
+            <span>🇺🇿</span> O'zbekcha
+          </button>
+          <button data-lang="ru" class="lang-option w-full text-left px-4 py-2.5 text-sm hover:bg-white/5 transition-colors flex items-center gap-3 cursor-pointer">
+            <span>🇷🇺</span> Русский
+          </button>
+          <button data-lang="en" class="lang-option w-full text-left px-4 py-2.5 text-sm hover:bg-white/5 transition-colors flex items-center gap-3 cursor-pointer">
+            <span>🇬🇧</span> English
+          </button>
+        </div>
+      </div>
+      <button id="dark" class="p-2.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 cursor-pointer transition-all">
+        <i class="fa-solid fa-moon text-gray-400 text-sm" id="modeIcon"></i>
+      </button>
+    </div>
+
     <!-- Background effects -->
-    <div class="absolute top-0 left-1/3 w-[500px] h-[500px] bg-blue-500/8 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-violet-500/8 rounded-full blur-3xl"></div>
+    <div class="absolute top-0 left-1/3 w-125 h-125 bg-blue-500/8 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/3 w-125 h-125 bg-violet-500/8 rounded-full blur-3xl"></div>
 
     <div class="w-full max-w-md mx-auto px-6 fade-in">
       <!-- Logo -->
@@ -27,7 +52,7 @@
         <a href="/" class="text-3xl font-bold bg-linear-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent no-underline">
           Jamshiddin
         </a>
-        <p class="text-gray-500 mt-2 text-sm">Hisobingizga kiring</p>
+        <p class="text-gray-500 mt-2 text-sm" data-i18n="login.subtitle">Hisobingizga kiring</p>
       </div>
 
       <!-- Login Card -->
@@ -51,7 +76,7 @@
 
           <!-- Password -->
           <div class="space-y-2">
-            <label for="password" class="text-sm font-medium text-gray-300">Parol</label>
+            <label for="password" class="text-sm font-medium text-gray-300" data-i18n="login.password">Parol</label>
             <div class="relative">
               <i class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-sm"></i>
               <input
@@ -72,9 +97,9 @@
           <div class="flex items-center justify-between text-sm">
             <label class="flex items-center gap-2 cursor-pointer text-gray-400">
               <input type="checkbox" class="w-4 h-4 rounded border-white/10 bg-white/5 accent-blue-500" />
-              Eslab qolish
+              <span data-i18n="login.remember">Eslab qolish</span>
             </label>
-            <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors no-underline">Parolni unutdingizmi?</a>
+            <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors no-underline" data-i18n="login.forgot">Parolni unutdingizmi?</a>
           </div>
 
           <!-- Submit Button -->
@@ -83,14 +108,14 @@
             class="w-full py-3 rounded-xl bg-linear-to-r from-blue-500 to-violet-500 hover:from-blue-600 hover:to-violet-600 text-sm font-semibold transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 cursor-pointer flex items-center justify-center gap-2"
           >
             <i class="fa-solid fa-right-to-bracket text-xs"></i>
-            Kirish
+            <span data-i18n="login.submit">Kirish</span>
           </button>
         </form>
 
         <!-- Divider -->
         <div class="flex items-center gap-4 my-6">
           <div class="flex-1 h-px bg-white/10"></div>
-          <span class="text-xs text-gray-500">yoki</span>
+          <span class="text-xs text-gray-500" data-i18n="login.or">yoki</span>
           <div class="flex-1 h-px bg-white/10"></div>
         </div>
 
@@ -109,15 +134,15 @@
 
       <!-- Register link -->
       <p class="text-center text-sm text-gray-500 mt-6">
-        Hisobingiz yo'qmi?
-        <a href="/register/" class="text-blue-400 hover:text-blue-300 transition-colors no-underline font-medium">Ro'yxatdan o'ting</a>
+        <span data-i18n="login.noAccount">Hisobingiz yo'qmi?</span>
+        <a href="/register/" class="text-blue-400 hover:text-blue-300 transition-colors no-underline font-medium" data-i18n="login.registerLink">Ro'yxatdan o'ting</a>
       </p>
 
       <!-- Back link -->
       <div class="text-center mt-4">
         <a href="/" class="text-sm text-gray-500 hover:text-gray-300 transition-colors no-underline inline-flex items-center gap-1">
           <i class="fa-solid fa-arrow-left text-xs"></i>
-          Bosh sahifaga qaytish
+          <span data-i18n="backHome">Bosh sahifaga qaytish</span>
         </a>
       </div>
     </div>
