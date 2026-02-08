@@ -28,7 +28,7 @@ form?.addEventListener("submit", async (e) => {
     const data = await res.json();
 
     if (res.ok) {
-      window.location.href = "/";
+      window.location.href = "/dashboard/";
     } else {
       alert(data.error || "Login xatolik");
     }

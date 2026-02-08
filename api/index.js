@@ -153,7 +153,7 @@ app.post("/login", async (req, res) => {
 app.get("/me", authenticate, async (req, res) => {
   try {
     const result = await pool.query(
-      "SELECT id, name, email, created_at FROM users WHERE id = $1",
+      "SELECT id, name, email, provider, created_at FROM users WHERE id = $1",
       [req.user.id]
     )
     if (result.rows.length === 0) {
@@ -197,6 +197,113 @@ app.post("/logout", (req, res) => {
   res.clearCookie("access_token")
   res.clearCookie("refresh_token")
   res.json({ message: "Logged out successfully" })
+})
+
+// === Google OAuth ===
+
+app.get("/auth/google", (req, res) => {
+  const params = new URLSearchParams({
+    client_id: process.env.GOOGLE_CLIENT_ID,
+    redirect_uri: "http://localhost:3000/auth/google/callback",
+    response_type: "code",
+    scope: "openid email profile",
+  })
+  res.redirect(`https://accounts.google.com/o/oauth2/v2/auth?${params}`)
+})
+
+app.get("/auth/google/callback", async (req, res) => {
+  const { code } = req.query
+  if (!code) return res.redirect("http://localhost/login/")
+
+  try {
+    // Exchange code for tokens
+    const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        code,
+        client_id: process.env.GOOGLE_CLIENT_ID,
+        client_secret: process.env.GOOGLE_CLIENT_SECRET,
+        redirect_uri: "http://localhost:3000/auth/google/callback",
+        grant_type: "authorization_code",
+      }),
+    })
+    const tokenData = await tokenRes.json()
+
+    // Get user info
+    const userRes = await fetch("https://www.googleapis.com/oauth2/v2/userinfo", {
+      headers: { Authorization: `Bearer ${tokenData.access_token}` },
+    })
+    const googleUser = await userRes.json()
+
+    const user = await findOrCreateOAuthUser(googleUser.name, googleUser.email, "google")
+    const { accessToken, refreshToken } = generateTokens(user)
+    setTokenCookies(res, accessToken, refreshToken)
+
+    res.redirect("http://localhost/dashboard/")
+  } catch (err) {
+    console.error("Google OAuth error:", err)
+    res.redirect("http://localhost/login/")
+  }
+})
+
+// === GitHub OAuth ===
+
+app.get("/auth/github", (req, res) => {
+  const params = new URLSearchParams({
+    client_id: process.env.GITHUB_CLIENT_ID,
+    redirect_uri: "http://localhost:3000/auth/github/callback",
+    scope: "user:email",
+  })
+  res.redirect(`https://github.com/login/oauth/authorize?${params}`)
+})
+
+app.get("/auth/github/callback", async (req, res) => {
+  const { code } = req.query
+  if (!code) return res.redirect("http://localhost/login/")
+
+  try {
+    // Exchange code for access token
+    const tokenRes = await fetch("https://github.com/login/oauth/access_token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        client_id: process.env.GITHUB_CLIENT_ID,
+        client_secret: process.env.GITHUB_CLIENT_SECRET,
+        code,
+      }),
+    })
+    const tokenData = await tokenRes.json()
+
+    // Get user info
+    const userRes = await fetch("https://api.github.com/user", {
+      headers: { Authorization: `Bearer ${tokenData.access_token}` },
+    })
+    const ghUser = await userRes.json()
+
+    // Get email (may be private)
+    let email = ghUser.email
+    if (!email) {
+      const emailRes = await fetch("https://api.github.com/user/emails", {
+        headers: { Authorization: `Bearer ${tokenData.access_token}` },
+      })
+      const emails = await emailRes.json()
+      const primary = emails.find(e => e.primary)
+      email = primary?.email || emails[0]?.email
+    }
+
+    const user = await findOrCreateOAuthUser(ghUser.name || ghUser.login, email, "github")
+    const { accessToken, refreshToken } = generateTokens(user)
+    setTokenCookies(res, accessToken, refreshToken)
+
+    res.redirect("http://localhost/dashboard/")
+  } catch (err) {
+    console.error("GitHub OAuth error:", err)
+    res.redirect("http://localhost/login/")
+  }
 })
 
 app.listen(PORT, () => console.info(`Server running on port ${PORT}`))

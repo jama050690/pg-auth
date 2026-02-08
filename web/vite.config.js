@@ -13,6 +13,7 @@ export default defineConfig({
         projects: resolve(__dirname, "projects/index.html"),
         samples: resolve(__dirname, "projects/samples/index.html"),
         register: resolve(__dirname, "register/index.html"),
+        dashboard: resolve(__dirname, "dashboard/index.html"),
       },
     },
   },
