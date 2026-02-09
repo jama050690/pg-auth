@@ -59,6 +59,22 @@ const translations = {
     "register.ruleUpper": "Kamida 1 ta katta harf (A-Z)",
     "register.ruleNumber": "Kamida 1 ta raqam (0-9)",
     "register.ruleSpecial": "Kamida 1 ta maxsus belgi (_=&^%$#@!)",
+    // About me page
+    "about.title": "Men haqimda",
+    "about.desc": "Men full-stack web developer bo'lib, zamonaviy texnologiyalar yordamida web ilovalar yarataman. Node.js, Express, PostgreSQL va Docker bilan ishlashni yaxshi ko'raman. Har doim yangi narsalarni o'rganishga va o'z bilimlarimni oshirishga intilamanman.",
+    "about.skills": "Ko'nikmalar",
+    "about.contact": "Aloqa",
+    "about.phone": "Telefon",
+    // Projects page
+    "projects.titleMy": "Mening",
+    "projects.titleProjects": "loyihalarim",
+    "projects.desc": "Men ishlab chiqqan va ustida ishlayotgan loyihalar to'plami",
+    "projects.pgAuthDesc": "PostgreSQL asosida autentifikatsiya tizimi. Docker bilan deploy, Express API.",
+    "projects.portfolioDesc": "Shaxsiy portfolio sayti. Tailwind CSS, Vite va zamonaviy dizayn bilan.",
+    "projects.visitSite": "Saytga o'tish",
+    "projects.samplesTitle": "Loyihalardan namunalar",
+    "projects.samplesDesc": "12 ta JavaScript loyiha: Palindrome Checker, Cash Register, Qur'an App va boshqalar.",
+    "projects.viewAll": "Barchasini ko'rish",
   },
   ru: {
     "nav.about": "Обо мне",
@@ -117,6 +133,22 @@ const translations = {
     "register.ruleUpper": "Минимум 1 заглавная буква (A-Z)",
     "register.ruleNumber": "Минимум 1 цифра (0-9)",
     "register.ruleSpecial": "Минимум 1 спецсимвол (_=&^%$#@!)",
+    // About me page
+    "about.title": "Обо мне",
+    "about.desc": "Я full-stack веб-разработчик, создаю веб-приложения с помощью современных технологий. Хорошо работаю с Node.js, Express, PostgreSQL и Docker. Всегда стремлюсь учиться новому и совершенствовать свои навыки.",
+    "about.skills": "Навыки",
+    "about.contact": "Контакты",
+    "about.phone": "Телефон",
+    // Projects page
+    "projects.titleMy": "Мои",
+    "projects.titleProjects": "проекты",
+    "projects.desc": "Коллекция проектов, которые я разработал и над которыми работаю",
+    "projects.pgAuthDesc": "Система аутентификации на основе PostgreSQL. Деплой через Docker, Express API.",
+    "projects.portfolioDesc": "Личный сайт-портфолио. Tailwind CSS, Vite и современный дизайн.",
+    "projects.visitSite": "Перейти на сайт",
+    "projects.samplesTitle": "Примеры проектов",
+    "projects.samplesDesc": "12 JavaScript проектов: Palindrome Checker, Cash Register, Qur'an App и другие.",
+    "projects.viewAll": "Посмотреть все",
   },
   en: {
     "nav.about": "About me",
@@ -175,6 +207,22 @@ const translations = {
     "register.ruleUpper": "At least 1 uppercase letter (A-Z)",
     "register.ruleNumber": "At least 1 number (0-9)",
     "register.ruleSpecial": "At least 1 special character (_=&^%$#@!)",
+    // About me page
+    "about.title": "About me",
+    "about.desc": "I'm a full-stack web developer, building web applications using modern technologies. I work well with Node.js, Express, PostgreSQL and Docker. I always strive to learn new things and improve my skills.",
+    "about.skills": "Skills",
+    "about.contact": "Contact",
+    "about.phone": "Phone",
+    // Projects page
+    "projects.titleMy": "My",
+    "projects.titleProjects": "projects",
+    "projects.desc": "A collection of projects I've built and am working on",
+    "projects.pgAuthDesc": "Authentication system based on PostgreSQL. Docker deployment, Express API.",
+    "projects.portfolioDesc": "Personal portfolio website. Tailwind CSS, Vite and modern design.",
+    "projects.visitSite": "Visit site",
+    "projects.samplesTitle": "Project samples",
+    "projects.samplesDesc": "12 JavaScript projects: Palindrome Checker, Cash Register, Qur'an App and more.",
+    "projects.viewAll": "View all",
   },
 };
 
